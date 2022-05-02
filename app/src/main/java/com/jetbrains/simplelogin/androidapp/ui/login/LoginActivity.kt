@@ -8,10 +8,12 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.ably.shared.Greeting
 import com.jetbrains.simplelogin.androidapp.databinding.ActivityLoginBinding
 
 import com.jetbrains.simplelogin.androidapp.R
@@ -26,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.i("Login Activity", "Hello from shared module: " + (Greeting().greeting()))
 
         val username = binding.username
         val password = binding.password
